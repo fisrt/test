@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>课程在线结算</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"><!-- ,minimum-scale=1.0,maximum-scale=1.0 -->
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript" src="http://cdn.meia.me/public/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.meia.me/public/js/iw86/iw86.js"></script>
+<script type="text/javascript" src="http://cdn.meia.me/public/js/meia.js"></script>
+<!--[if lt IE 9]>
+  <script src="http://cdn.meia.me/public/js/html5shiv.min.js"></script>
+  <script src="http://cdn.meia.me/public/js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="http://cdn.meia.me/public/js/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="http://cdn.meia.me/public/css/fonts/font-awesome.min.css">
+<link href="http://cdn.meia.me/public/css/style.css?t=0946" rel="stylesheet" />
+<link rel="stylesheet" href="http://cdn.meia.me/public/css/meia-v1.css">
+<script type="text/javascript" src="http://cdn.meia.me/public/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="http://cdn.meia.me/public/js/datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<link href="http://cdn.meia.me/public/js/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet">
+<script type="text/javascript" src="http://cdn.meia.me/public/js/iw86/grid.js"></script>
+<script type="text/javascript" src="http://cdn.meia.me/public/js/artDialog/dialog-min.js"></script>
+<script type="text/javascript" src="http://cdn.meia.me/public/js/artDialog/dialog-plus-min.js"></script>
+<link rel="stylesheet" href="http://cdn.meia.me/public/js/artDialog/ui-dialog.css" type="text/css" /></head>
+<body>
+<meta name="format-detection" content="telephone=no">
+<div class="nav_navbar">
+  <div class="nav_fixed">
+    <nav class="nav navbar-default" style="background-color:inherit;">
+      <div class="navbar-header">
+        <button id="menu-button" type="button" class="navbar-toggle collapsed toggle_control" data-toggle="collapse" data-target="#cat-menu" aria-expanded="false" role="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="wap_logo">
+          <a class="navbar-brand logo" href="/index.html"><img src="http://cdn.meia.me/public/images/logo.png" alt="美啊-见证设计的力量" /></a>
+        </div>
+        <div class="user_img" id="wapUserCenter"></div>
+        <div class="wap_login">
+          <a class="userimg" data-toggle="collapse" data-target=".caozuo" aria-expanded="false"></a>
+          <div class="collapse caozuo">
+            <a href="http://u.meia.me/account/login">登录</a>
+            <a href="http://u.meia.me/account/reg">注册</a>
+          </div>
+        </div>
+        <script>
+            $(".userimg").click(function(){
+              if(!$(this).hasClass("hover")){
+                $("#cat-menu").removeClass("in");
+              }
+              $(this).toggleClass("hover");
+            });
+              $("#menu-button").click(function(){
+                $(".userimg").removeClass("hover");
+                $(".caozuo").removeClass("in");
+            });
+        </script>
+      </div>
+      <div class="collapse navbar-collapse" id="cat-menu">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="mobile_hide">
+            <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bars"></i> 发现</a>
+            <ul class="dropdown-menu left_list second_nav" aria-labelledby="dLabel">
+            </ul>
+          </li>
+          <li><a href="/course/list">找课程</a></li>
+          <li><a href="/activity/list">找活动</a></li>
+          <li><a href="//www.meia.me/apps">APP下载</a></li> 
+        </ul>
+        <form name="soForm" role="form" method="post" action="/course/list">
+          <div class="input-group nav_search">
+            <label class="sr-only" for="">查找</label>
+            <input class="search_sm" type="text" type="text" name="key" id="key" placeholder="搜索视频">
+            <button class="search_go" type="submit"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right" id="accountNavbar">
+          <li><a href="http://u.meia.me/account/login">登录</a></li>
+          <li><a href="http://u.meia.me/account/reg">注册</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="bgcolor_nav">
+  <nav class="navbar navbar-default nav_float">
+    <div class="navbar-header">
+      <a class="navbar-brand logo" href="/index.html"><img src="http://cdn.meia.me/public/images/logo.png" alt="Meia" /></a>
+    </div>
+    <ul class="nav navbar-nav second_nav">
+    </ul>
+  </nav>
+</div>
+
+<script src="http://u.meia.me/accountNavbarJs"></script>
+<script src="http://cdn.meia.me/navCategory.js"></script><div class="main-container cleartop">
+<section class="container-fluid meia_content">
+<div class="more_nav">
+        <h3 class="more_nav_title">课程在线结算</h3>
+</div>
+<form name="f1" role="form" method="get" action="listAll">
+  <div class="form-inline" style="margin:10px 0;">
+    <div class="form-group">
+      <input type="text" value="" name="coursename" placeholder="谭程名称" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>统计时间</label>
+      <input type="text" class="form-control" name="mintime" id="mintime" value="" placeholder="开始时间"/>
+      <input type="text" class="form-control" name="maxtime" id="maxtime" value="" placeholder="结束时间"/>
+    </div>
+    <div class="form-group">
+      <input type="text" value="" name="speakername" placeholder="机构" class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit">查询</button>
+  </div>
+
+<div class="panel panel-danger">
+	<div class="panel-heading">统计结果</div>
+  <div class="panel-body">
+    <ul class="list-inline">
+    <li class="col-md-3">统计时间<br>2016年3月</li>
+    <li class="col-md-3">订单数<br>3521</li>
+    <li class="col-md-3">结算所得<br>52124</li>
+    <li class="col-md-3">结算状态<br>已结算</li>
+  </ul>
+  </div>
+
+</div>
+
+  <div id="gridContentDiv">
+    <div id="d_grid">
+    <table class="table table-striped" id="tab_grid">
+<thead><tr>
+<th class="tcenter"><input type="checkbox" onclick="grid.selectAll()" id="selall_selId"></th>
+<th class="selected" width="8%" onclick="grid.sortable(0,'id');">课ID</th>
+<th class="selected" width="8%">类型</th>
+<th class="selected" width="18%">课程名称</th>
+<th class="selected" width="10%">机构</th>
+<th class="selected" width="5%">价格</th>
+<th class="selected" width="5%">订单数</th>
+<th class="selected" width="5%">总额</th>
+<th class="selected" width="8%">分成比例</th>
+<th class="selected" width="8%">销售成本</th>
+<th class="selected" width="8%">结算所得</th>
+<th class="selected" width="10%">操作</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="tcenter"><input type="checkbox" name="selId" value="168448"></td>
+<td>168448</td>
+<td>录播课程</td>
+<td>不会用Axure还敢说是产品经理！</td>
+<td>IXDC</td>
+<td>200</td>
+<td>231</td>
+<td>5210</td>
+<td>30%</td>
+<td>10%</td>
+<td>1563</td>
+<td><a class="btn btn-xs btn-primary" href="order_assign.html" title="详细"><span class="glyphicon glyphicon-info-sign"></span> 详细</a></td></tr>
+</tbody></table>
+</div>
+</div>
+</form>
+</section>
+</div>
+
+<div class="footbar cleartop">
+  <div class="mainbox">
+    <div class="leftbox">
+      <a class="ft_logo" href="/index.html"><img src="http://cdn.meia.me/public/images/logo_tm.png" alt="美啊-见证设计的力量" /></a>
+      <p class="company_info">
+      Meia（美啊）致力搭建创意设计与时尚美学教育平台，与国内外顶级企业、权威机构和专业院校协作，为你提供海量优质在线课程和线下活动，聚集全球精彩的创意设计、交互设计、工业设计、服务设计、设计思维及时尚美学等类别的课程。通过不断打造实践型教与学模式，为你带来更愉悦的学习体验，助你在无边学海中乘风破浪！实现你内心那成为艺术家的梦想！
+      </p>
+      <p class="tel">4000-2233-85</p>
+      <p class="email">咨询邮箱：service@meia.me</p>
+    </div>
+    <div class="rightbox">
+      <div class="linkboxs">
+        <div class="linkbox">
+          <h2 class="title">关于我们</h2>
+          <a href="/about">关于我们</a>
+          <a href="/join">加入我们</a>
+        </div>
+        <div class="linkbox">
+          <h2 class="title">商务合作</h2>
+          <a href="#">成为会员</a>
+          <a href="/speakers">专家团队</a>
+          <a href="/teams">合作机构</a>
+        </div>
+        <div class="linkbox">
+          <h2 class="title">帮助中心</h2>
+          <a href="#">新手指南</a> 
+          <a href="/termsofservice">服务条款</a>
+          <a href="/copyright">版权声明</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p><a target="_blank" href="http://www.miitbeian.gov.cn/">粤ICP备15063798号</a></p>
+        <p>copyright@ 2014-2015 meia.me 版权所有</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+//顶部导航
+//滑动效果
+$(".include_icon").hover(function(){
+    $(this).children("span").toggleClass("hover");
+});
+</script>
+<script type="text/javascript" src="http://cdn.meia.me/public/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://cdn.meia.me/public/js/bootstrap/plugin/bootstrap-hover-dropdown.min.js"></script>
+<script src="https://qiyukf.com/script/bc08d37fd67780460e04591336437a87.js" defer async></script>
+</body>
+</html>
