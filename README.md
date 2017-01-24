@@ -1,17 +1,22 @@
-# MARKDOWN语法
+# Markdown语法
 
+### 标题写法
 
-big title readmetest
-=====
-medium title
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+一级标题（符号个数不限）
+========================
+二级标题
 -----
-### small title
-single line   single line   
-aaa
+
     
 ### 块引用(>、>>、>>>一个>表示块级，>>两个表示嵌套以此类推)   
-> This is a blockquote with two paragraphs. Lore
-> m ipsum dolor sit amet,consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
 
 >> ipsum dolor sit amet,con
 >>>fdsfdsfdsafsfsad
@@ -22,13 +27,61 @@ aaa
 ### 无序列表（*、-、+都表示为一样 中间加空格）   
 * 列表列表1
 * 列表列表1
-* 列表列表1
-
-- 列表列表2
-- 列表列表2
-- 列表列表2
++ 列表列表2
++ 列表列表2
+- 列表列表3
+- 列表列表3
 
 ### 有序列表 （1. 2. 3.表示 中间加空格）   
-1. 列表列表3
-2. 列表列表3
-3. 列表列表3
+1. 列表列表
+2. 列表列表
+3. 列表列表
+
+### 代码框(使用`包围：you code hehe~)
+
+### 图片和链接（图片有!,链接无）
+图片为：`![](){ImgCap}{/ImgCap}	`
+ 	
+链接为：`[]()`
+ 
+![文字描述](http://cdn.meia.me/public/images/ilogo.svg)
+
+[链接到美啊](meia.me)
+
+链接还有参考式写法：
+
+	几个网站[GitHub][1]、[segmentfault][2]以及[mine][3]		
+	[Leanote 笔记][2]是一个不错的[网站][]。		
+	[1]:https://github.com "GitHub"		
+	[2]:https://segmentfault.com "segmentfault"		
+	[3]:https://github.com/fisrt/test "mine"		
+	[网站]:https://github.com/fisrt/test	
+
+几个网站[GitHub][1]、[segmentfault][2]以及[mine][3]
+
+[segmentfault][2]是一个不错的[网站][]。
+[1]:https://github.com "GitHub"		
+[2]:https://segmentfault.com "segmentfault"		
+[3]:https://github.com/fisrt/test "mine"
+[网站]:https://github.com/fisrt/test
+
+### 粗体、斜体、删除线（***B&I粗斜体，**B粗体, *I斜体、_斜体, ~删除线）
+1. **我是粗体**
+
+2. ***我是加粗斜体*** 
+
+3. *斜体~~* 或者是 _还是斜体_
+
+5.  ~~ 删除线 ~~
+
+
+### 我是分割线、下划线：
+***
+---
+### 表格
+| 表格| 工具| 练习|
+| ---| ---| ---|
+| 表格| 工具| 练习|
+| 表格| 工具| 练习|
+
+hello[^hello]
