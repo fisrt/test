@@ -27,15 +27,15 @@
 ### 二、代码框(使用`包围：you code hehe~)
 
 ### 三、图片和链接（图片有!,链接无）
-图片为：`![](){ImgCap}{/ImgCap}	`
+* 图片为：`![](){ImgCap}{/ImgCap}	`
  	
-链接为：`[]()`
+* 链接为：`[]()`
  
-![文字描述](http://cdn.meia.me/public/images/ilogo.svg)
+  ![文字描述](http://cdn.meia.me/public/images/ilogo.svg)
 
-[链接到美啊](https://meia.me)
+  [链接到美啊](https://meia.me)
 
-链接还有参考式写法：
+ 链接还有参考式写法：
 
 	几个网站[GitHub][1]、[segmentfault][2]以及[mine][3]		
 	[segmentfault][2]是一个不错的[网站][]。		
@@ -52,6 +52,9 @@
 [3]:https://github.com/fisrt/test "mine"
 [网站]:https://github.com/fisrt/test
 
+自动转为链接用<>:
+<http://meia.me>
+<http://www.google.com>
 
 ### 四、无序列表（*、-、+都表示为一样 中间加空格）   
 * 列表列表1
@@ -92,3 +95,8 @@
 
 
 后续补充。。。
+
+
+
+
+
