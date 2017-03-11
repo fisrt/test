@@ -22,8 +22,14 @@
     
 
 ### 二、代码框
-1 '`'包围一段标注的文字：you code hehe~
-1 '```' 包围需要加入的代码： function(){console.log(1)}
+1.  `  `   `包围一段标注的文字：    
+`you code hehe~`
+1.  ` ``` ` 包围需要加入的代码： 
+```
+	function(){
+		console.log(1)
+	}
+```
 
 ### 三、图片和链接（图片有!,链接无）
 * 图片为：`![](){ImgCap}{/ImgCap}	`
