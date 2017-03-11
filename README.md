@@ -21,7 +21,9 @@
 > m ipsum dolor sit amet,consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
     
 
-### 二、代码框(使用`包围：you code hehe~)
+### 二、代码框
+1 '`'包围一段标注的文字：you code hehe~
+1 '```' 包围需要加入的代码： function(){console.log(1)}
 
 ### 三、图片和链接（图片有!,链接无）
 * 图片为：`![](){ImgCap}{/ImgCap}	`
